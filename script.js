@@ -1,4 +1,4 @@
-//{ calculate } import './calculator';
+import { calculate } from './calculator.js';
 
 // TODO: Faire la manipulation du DOM dans ce fichier
 //we start
@@ -27,12 +27,18 @@ const btnPlus = document.getElementById('plus');
 const point = document.querySelector('.dot');
 const btn0 = document.querySelectorAll('.digit')[9];
 const egal = document.getElementById('equals');
-// Add event listeners to buttons
+//reset variable
+showResult.innerHTML ="";
+bigInput.disabled = true;
+// Add event  to buttons
 btn0.addEventListener("click", function(){
     bigInput.value += 0;
 });
 btn1.addEventListener("click", function(){
     bigInput.value += 1;
+});
+btn2.addEventListener("click", function(){
+    bigInput.value += 2;
 });
 btn3.addEventListener("click", function(){
     bigInput.value += 3;
@@ -55,11 +61,57 @@ btn8.addEventListener("click", function(){
 btn9.addEventListener("click", function(){
     bigInput.value += 9;
 });
-//attribution the valeurs with btn
-// bigInput.value = 0;
-percentage = "%";
-divideby = "/";
-btnX = "x";
-btnMoins = "-";
-btnPlus = "+";
-egal = "=";
+point.addEventListener("click", function(){
+    bigInput.value += '.';
+});
+// Add event to operators
+reset.addEventListener("click", function(){
+    showResult.innerHTML = "";
+    bigInput.value ="";
+});
+clear.addEventListener("click", function(){
+    bigInput.value ="";
+});
+//add +/- on double click
+plusoumoins.addEventListener("click", function(){
+    bigInput.value = "-" + bigInput.value; 
+});
+//change the submit of button
+percentage.setAttribute("type", "button");
+divideby.setAttribute("type", "button");
+btnX.setAttribute("type", "button");
+btnMoins.setAttribute("type", "button");
+btnPlus.setAttribute("type", "button");
+egal.setAttribute("type", "button");
+//percentage
+//best operator, if on click in operator, we change de showresult
+percentage.addEventListener("click", function(){
+    let calPercentage;
+    calPercentage = bigInput.value / 100;
+    showResult.innerHTML = bigInput.value + "/100";
+    bigInput.value = calPercentage;
+});
+divideby.addEventListener("click", function(){
+    showResult.innerHTML = bigInput.value + "/";
+    bigInput.value = "";
+});
+btnX.addEventListener("click", function(){
+    showResult.innerHTML = bigInput.value + "*";
+    bigInput.value = "";
+});
+btnMoins.addEventListener("click", function(){
+    showResult.innerHTML = bigInput.value + "-";
+    bigInput.value = "";
+});
+btnPlus.addEventListener("click", function(){
+    showResult.innerHTML = bigInput.value + "+";
+    bigInput.value = "";
+});
+//last part egal
+egal.addEventListener("click", function (){
+    // bigInput.value ;
+    let Docalcul = showResult.innerHTML += bigInput.value;
+    let reponse = eval(Docalcul);
+    bigInput.value = reponse ?? "Ecrivez un chiffre";
+});
+
