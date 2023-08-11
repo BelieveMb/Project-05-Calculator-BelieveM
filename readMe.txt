@@ -1,7 +1,10 @@
 Instructions
 Écrans
 L'entrée inférieure (peut être sélectionnée avec l'ID "value input") contient le numéro d'entrée actuel.
-L'étiquette supérieure (peut être sélectionnée avec l'ID "value calcul") contient la chaîne de calcul actuelle que l'utilisateur tape. Les opérateurs sont précédés et suivis d'un seul espace.
+L'étiquette supérieure (peut être sélectionnée avec l'ID "value calcul")
+contient la chaîne de calcul actuelle que l'utilisateur tape.
+Les opérateurs sont précédés et suivis d'un seul espace.
+
 Un nombre est ajouté à l'étiquette après avoir appuyé sur un opérateur.
 Le calcul n'est effectué que lorsque l'on appuie sur = ou %.
 Par exemple, le calcul 23 × 2 = 46 aura 2 dans l'entrée et la chaîne 23 × 2 dans le texte au-dessus du champ d'entrée.
@@ -18,3 +21,10 @@ Lors de l'affichage du résultat d'une opération, un signe égal = est ajouté 
 Bonus
 ...
 Ajouter un 00.
+
+
+#Steps
+1. Selectionner l'entrée inférieure donc la 1er entrée comme ex. 24
+2. Selectionner l'entrée supérieure donc la 2e entrée comme ex. 3
+3. 
+4. un opérateur cache la 1er entrée et fais place au deuxième
