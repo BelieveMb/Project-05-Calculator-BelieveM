@@ -27,27 +27,39 @@ const btnPlus = document.getElementById('plus');
 const point = document.querySelector('.dot');
 const btn0 = document.querySelectorAll('.digit')[9];
 const egal = document.getElementById('equals');
-
+// Add event listeners to buttons
+btn0.addEventListener("click", function(){
+    bigInput.value += 0;
+});
+btn1.addEventListener("click", function(){
+    bigInput.value += 1;
+});
+btn3.addEventListener("click", function(){
+    bigInput.value += 3;
+});
+btn4.addEventListener("click", function(){
+    bigInput.value += 4;
+});
+btn5.addEventListener("click", function(){
+    bigInput.value += 5;
+});
+btn6.addEventListener("click", function(){
+    bigInput.value += 6;
+});
+btn7.addEventListener("click", function(){
+    bigInput.value += 7;
+});
+btn8.addEventListener("click", function(){
+    bigInput.value += 8;
+});
+btn9.addEventListener("click", function(){
+    bigInput.value += 9;
+});
 //attribution the valeurs with btn
-bigInput = 0;
+// bigInput.value = 0;
 percentage = "%";
 divideby = "/";
 btnX = "x";
 btnMoins = "-";
 btnPlus = "+";
 egal = "=";
-//the valeur in all buttons
-btn0 = 0;
-btn1 = 1;
-btn2 = 2;
-btn3 = 3;
-btn4 = 4;
-btn5 = 5;
-btn6 = 6;
-btn7 = 7;
-btn8 = 8;
-btn9 = 9;
-//attribution the events
-btn7.addEventListener('click', () => {
-    bigInput.value += btn7;
-});
