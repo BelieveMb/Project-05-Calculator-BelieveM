@@ -112,6 +112,7 @@ egal.addEventListener("click", function (){
     // bigInput.value ;
     let Docalcul = showResult.innerHTML += bigInput.value;
     let reponse = eval(Docalcul);
-    bigInput.value = reponse ?? "Ecrivez un chiffre";
+    bigInput.value = reponse;
+    // ?? "Ecrivez un chiffre";
 });
 
