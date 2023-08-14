@@ -20,8 +20,7 @@ Appuyer sur le bouton +/- change le signe du numéro d'entrée actuel.
 Appuyer sur le bouton % retourne le résultat des calculs en pourcentage, c'est-à-dire qu'il le divise par 100.
 AC réinitialise tout, et C efface uniquement l'entrée.
 Lors de l'affichage du résultat d'une opération, un signe égal = est ajouté à la
-chaîne d'entrée et
- le résultat est affiché dans le champ d'entrée.
+chaîne d'entrée et  le résultat est affiché dans le champ d'entrée.
 Bonus
 ...
 Ajouter un 00.
