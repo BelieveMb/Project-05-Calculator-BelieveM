@@ -6,7 +6,11 @@ const showResult = document.getElementById('calcul');
 const bigInput = document.getElementById('input');
 //this var exist in the first part of calculator, for show the result
 const btn = document.querySelectorAll('.digit');
-
+// ours functions
+function addPoint(){
+    bigInput.value += '.';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    point.removeEventListener("click", addPoint);
+}
 //place of buttons
 const reset = document.getElementById('reset');
 const clear = document.getElementById('clear');
@@ -29,10 +33,7 @@ btn.forEach(btnIndex => {
         bigInput.value += btnContent;
     });
 });
-function addPoint(){
-    bigInput.value += '.';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-    point.removeEventListener("click", addPoint);
-}
+
 point.addEventListener("click", addPoint);
 // Add event to operators
 reset.addEventListener("click", function(){
@@ -57,7 +58,7 @@ percentage.addEventListener("click", function(event){
     event.preventDefault();
 });
 divideby.addEventListener("click", function(event){
-    showResult.innerHTML = bigInput.value + "/";
+    showResult.innerHTML = bigInput.value + "%";
     bigInput.value = "";
     event.preventDefault();
 });
@@ -76,23 +77,33 @@ btnPlus.addEventListener("click", function(event){
     bigInput.value = "";
     event.preventDefault();
 });
+
 //last part egal
 egal.addEventListener("click", function (event){
-    let Docalcul = showResult.innerHTML += bigInput.value;
-    let reponse = eval(Docalcul);
-    bigInput.value = reponse;
     event.preventDefault();
+    if(bigInput.value){
+        if(bigInput.value !== "Error, It's empty"){
+            let Docalcul = showResult.innerHTML += bigInput.value;
+            let reponse = eval(Docalcul);
+            bigInput.value = reponse;
+        }
+    }else{
+        bigInput.value = "Error, It's empty";
+    }
 });
-//create the btn 00 and btn delete
-const allBtn = document.querySelector(".buttons");
-//create div of btn delete
-const divDel = document.createElement("div");
-allBtn.appendChild(divDel); //divDel come the child of allbtn
-//create btn delete
-const btnDel = "<button type=\"submit\" >Del</button>";
-divDel.innerHTML = btnDel;
-//create div of btn 00
-const div00 = document.createElement("div");
-allBtn.appendChild(div00); //divDel come the child of allbtn
-const btn00 = "<button type=\"submit\" >00</button>";
-div00.innerHTML = btn00;
+// //create the btn 00 and btn delete
+// const allBtn = document.querySelector(".buttons");
+// //create div of btn delete
+// const divDel = document.createElement("div");
+// allBtn.appendChild(divDel); //divDel come the child of allbtn
+// //create btn delete
+// const btnDel = "<button type=\"submit\" id=\"btnDelId\">Del</button>";
+// divDel.innerHTML = btnDel;
+// //create div of btn 00
+// const div00 = document.createElement("div");
+// allBtn.appendChild(div00); //divDel come the child of allbtn
+// const btn00 = "<button type=\"submit\" >00</button>";
+// div00.innerHTML = btn00;
+
+// //use the btnDel and btn00
+// const btnDelId = document.getElementById("btnDelId");
