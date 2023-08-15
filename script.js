@@ -56,33 +56,39 @@ plusoumoins.addEventListener("click", function(){
 // egal.setAttribute("type", "button");
 //percentage
 //best operator, if on click in operator, we change de showresult
-percentage.addEventListener("click", function(){
+percentage.addEventListener("click", function(event){
     let calPercentage;
     calPercentage = bigInput.value / 100;
     showResult.innerHTML = bigInput.value + "/100";
     bigInput.value = calPercentage;
+    event.preventDefault();
 });
-divideby.addEventListener("click", function(){
+divideby.addEventListener("click", function(event){
     showResult.innerHTML = bigInput.value + "/";
     bigInput.value = "";
+    event.preventDefault();
 });
-btnX.addEventListener("click", function(){
+btnX.addEventListener("click", function(event){
     showResult.innerHTML = bigInput.value + "*";
     bigInput.value = "";
+    event.preventDefault();
 });
-btnMoins.addEventListener("click", function(){
+btnMoins.addEventListener("click", function(event){
     showResult.innerHTML = bigInput.value + "-";
     bigInput.value = "";
+    event.preventDefault();
 });
-btnPlus.addEventListener("click", function(){
+btnPlus.addEventListener("click", function(event){
     showResult.innerHTML = bigInput.value + "+";
     bigInput.value = "";
+    event.preventDefault();
 });
 //last part egal
-egal.addEventListener("click", function (){
+egal.addEventListener("click", function (event){
     // bigInput.value ;
     let Docalcul = showResult.innerHTML += bigInput.value;
     let reponse = eval(Docalcul);
     bigInput.value = reponse;
+    event.preventDefault();
 });
 
