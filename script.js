@@ -77,9 +77,7 @@ btnPlus.addEventListener("click", function(event){
     bigInput.value = "";
     event.preventDefault();
 });
-
-//last part egal
-egal.addEventListener("click", function (event){
+function btnEgal(event){
     event.preventDefault();
     if(bigInput.value){
         if(bigInput.value !== "Error, It's empty"){
@@ -90,7 +88,9 @@ egal.addEventListener("click", function (event){
     }else{
         bigInput.value = "Error, It's empty";
     }
-});
+}
+//last part egal
+egal.addEventListener("click", btnEgal);
 // //create the btn 00 and btn delete
 // const allBtn = document.querySelector(".buttons");
 // //create div of btn delete
