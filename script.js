@@ -5,7 +5,6 @@ import { calculate } from './calculator.js';
 const showResult = document.getElementById('calcul');
 const bigInput = document.getElementById('input');
 //this var exist in the first part of calculator, for show the result
-//our functions
 const btn = document.querySelectorAll('.digit');
 
 //place of buttons
@@ -28,13 +27,13 @@ btn.forEach(btnIndex => {
     btnIndex.addEventListener('click', function(){
         let btnContent = btnIndex.textContent;
         bigInput.value += btnContent;
-        console.log(btnIndex.textContent);
-
     });
 });
-point.addEventListener("click", function(){
-    bigInput.value += '.';
-});
+function addPoint(){
+    bigInput.value += '.';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    point.removeEventListener("click", addPoint);
+}
+point.addEventListener("click", addPoint);
 // Add event to operators
 reset.addEventListener("click", function(){
     showResult.innerHTML = "";
@@ -48,9 +47,6 @@ plusoumoins.addEventListener("click", function(){
     let opposite = parseInt(bigInput.value) * -1;
     bigInput.value =  opposite; 
 });
-// plusoumoins.addEventListener("dblclick", function (){
-//     bigInput.value = "5" + bigInput.value; 
-// });
 //change the submit of button
 // percentage.setAttribute("type", "button");
 // divideby.setAttribute("type", "button");
