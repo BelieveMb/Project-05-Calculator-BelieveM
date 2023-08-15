@@ -47,13 +47,6 @@ plusoumoins.addEventListener("click", function(){
     let opposite = parseInt(bigInput.value) * -1;
     bigInput.value =  opposite; 
 });
-//change the submit of button
-// percentage.setAttribute("type", "button");
-// divideby.setAttribute("type", "button");
-// btnX.setAttribute("type", "button");
-// btnMoins.setAttribute("type", "button");
-// btnPlus.setAttribute("type", "button");
-// egal.setAttribute("type", "button");
 //percentage
 //best operator, if on click in operator, we change de showresult
 percentage.addEventListener("click", function(event){
@@ -85,10 +78,21 @@ btnPlus.addEventListener("click", function(event){
 });
 //last part egal
 egal.addEventListener("click", function (event){
-    // bigInput.value ;
     let Docalcul = showResult.innerHTML += bigInput.value;
     let reponse = eval(Docalcul);
     bigInput.value = reponse;
     event.preventDefault();
 });
-
+//create the btn 00 and btn delete
+const allBtn = document.querySelector(".buttons");
+//create div of btn delete
+const divDel = document.createElement("div");
+allBtn.appendChild(divDel); //divDel come the child of allbtn
+//create btn delete
+const btnDel = "<button type=\"submit\" >Del</button>";
+divDel.innerHTML = btnDel;
+//create div of btn 00
+const div00 = document.createElement("div");
+allBtn.appendChild(div00); //divDel come the child of allbtn
+const btn00 = "<button type=\"submit\" >00</button>";
+div00.innerHTML = btn00;
