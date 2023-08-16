@@ -95,6 +95,7 @@ function btnEgal(event){
     }else{
         bigInput.value = "Error, It's empty";
     }
+    egal.removeEventListener("click", btnEgal);
 }
 //last part egal
 egal.addEventListener("click", btnEgal);
