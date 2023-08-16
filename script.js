@@ -85,20 +85,47 @@ btnPlus.addEventListener("click", function(event){
     event.preventDefault();
 });
 function btnEgal(event){
+    let monClick = true;
     event.preventDefault();
-    if(bigInput.value){
-        if(bigInput.value !== "Error, It's empty"){
-            let Docalcul = showResult.innerHTML += bigInput.value;
-            let reponse = eval(Docalcul);
-            bigInput.value = reponse;
+    if (monClick){
+        if(bigInput.value){
+            if(bigInput.value !== "Error, It's empty"){
+                let Docalcul = showResult.innerHTML += bigInput.value;
+                let reponse = eval(Docalcul);
+                bigInput.value = reponse;
+            }
+        }else{
+            bigInput.value = "Error, It's empty";
         }
+        egal.removeEventListener("click", btnEgal);  
+        monClick = false;
     }else{
-        bigInput.value = "Error, It's empty";
+        bigInput.value = "le 2e click";
     }
-    egal.removeEventListener("click", btnEgal);
+      
 }
 //last part egal
 egal.addEventListener("click", btnEgal);
+
+let a = 0;
+let b = 0;
+let c = 0;
+
+// document.querySelector('button').addEventListener('click', function() {
+//   if (firstClick) {
+//     a = parseInt(prompt('Entrez la valeur de a :'));
+//     b = parseInt(prompt('Entrez la valeur de b :'));
+//     c = a + b;
+//     alert(`La valeur de c est ${c}`);
+//     firstClick = false;
+//   } else {
+//     b = parseInt(prompt('Entrez la nouvelle valeur de b :'));
+//     c = b + c;
+//     alert(`La nouvelle valeur de c est ${c}`);
+//   }
+// });
+
+
 // //create the btn 00 and btn delete
 // const allBtn = document.querySelector(".buttons");
 // //create div of btn delete
