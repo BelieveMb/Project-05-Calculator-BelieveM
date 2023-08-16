@@ -22,7 +22,15 @@ const btnPlus = document.getElementById('plus');
 const egal = document.getElementById('equals');
 const point = document.querySelector('.dot');
 const btnX = document.getElementById('times');
-
+//select many operators
+// const btnOpera = document.querySelectorAll('#divideby, #minus, #plus, #times');
+// console.log(btnOpera);
+// btnOpera.forEach(btnOp => {
+//     btnOp.addEventListener('click', function(){
+//         let btnContent = btnOp.textContent;
+//         bigInput.value += btnContent;
+//     });
+// });
 //reset variable
 showResult.innerHTML ="";
 bigInput.disabled = true;
@@ -48,8 +56,7 @@ plusoumoins.addEventListener("click", function(){
     let opposite = parseInt(bigInput.value) * -1;
     bigInput.value =  opposite; 
 });
-//percentage
-//best operator, if on click in operator, we change de showresult
+//percentage, if on click in operator, we change de showresult
 percentage.addEventListener("click", function(event){
     let calPercentage;
     calPercentage = bigInput.value / 100;
