@@ -92,6 +92,7 @@ function btnEgal(event) {
             let Docalcul = showResult.innerHTML += bigInput.value;
             let reponse = eval(Docalcul);
             bigInput.value = reponse;
+            showResult.innerHTML +=  "=" + bigInput.value;
         }
     } else {
         bigInput.value = "Error, It's empty";
