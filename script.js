@@ -1,3 +1,4 @@
+//import { type } from 'os';
 import { calculate } from './calculator.js';
 
 // TODO: Faire la manipulation du DOM dans ce fichier
@@ -15,6 +16,30 @@ function addPoint() {
         bigInput.value = '';
     }
 }
+//function for egal
+let comptCal = 0;
+let veriTy;
+function btnEgal(event) {
+    event.preventDefault();
+    if (bigInput.value) {
+        if (bigInput.value !== "Error, It's empty") {
+            let Docalcul = showResult.innerHTML += bigInput.value;
+            let reponse = eval(Docalcul);
+            bigInput.value = reponse;
+            showResult.innerHTML +=  " = " + bigInput.value;
+            //convert ton int
+            let convertBig = parseInt(bigInput.value); 
+            veriTy = typeof(convertBig);
+            // comptCal=1;
+            // while (comptCal>=1) {
+                
+            // }
+        }
+    } else {
+        bigInput.value = "Error, It's empty";
+    }
+
+}
 //place of buttons
 const reset = document.getElementById('reset');
 const clear = document.getElementById('clear');
@@ -30,18 +55,18 @@ const btnX = document.getElementById('times');
 //reset variable
 showResult.innerHTML = "";
 bigInput.disabled = true;
+console.log(typeof(bigInput.value));
 // Recuperate and Add event  to buttons
 btn.forEach(btnIndex => {
     btnIndex.addEventListener('click', function () {
         let btnContent = btnIndex.textContent;
-        if(bigInput.value){
+        if(typeof(convertBig) !== 'number'){
+            bigInput.value += btnContent;
+        }else{
             bigInput.value = "";
             showResult.innerHTML = "";
             bigInput.value += btnContent;
-        }else{
-            bigInput.value += btnContent;
         }
-
     });
 });
 
@@ -68,41 +93,26 @@ percentage.addEventListener("click", function (event) {
     event.preventDefault();
 });
 divideby.addEventListener("click", function (event) {
-    showResult.innerHTML = bigInput.value + "%";
+    showResult.innerHTML = bigInput.value + " % ";
     bigInput.value = "";
     event.preventDefault();
 });
 btnX.addEventListener("click", function (event) {
-    showResult.innerHTML = bigInput.value + "*";
+    showResult.innerHTML = bigInput.value + " * ";
     bigInput.value = "";
     event.preventDefault();
 });
 btnMoins.addEventListener("click", function (event) {
-    showResult.innerHTML = bigInput.value + "-";
+    showResult.innerHTML = bigInput.value + " - ";
     bigInput.value = "";
     event.preventDefault();
 });
 btnPlus.addEventListener("click", function (event) {
-    showResult.innerHTML = bigInput.value + "+";
+    showResult.innerHTML = bigInput.value + " + ";
     bigInput.value = "";
     event.preventDefault();
 });
 
-function btnEgal(event) {
-    event.preventDefault();
-    // egal.removeEventListener("click", btnEgal);    
-    if (bigInput.value) {
-        if (bigInput.value !== "Error, It's empty") {
-            let Docalcul = showResult.innerHTML += bigInput.value;
-            let reponse = eval(Docalcul);
-            bigInput.value = reponse;
-            showResult.innerHTML +=  "=" + bigInput.value;
-        }
-    } else {
-        bigInput.value = "Error, It's empty";
-    }
-
-}
 //last part egal
 egal.addEventListener("click", btnEgal);
 
