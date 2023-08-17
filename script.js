@@ -17,7 +17,6 @@ function addPoint() {
     }
 }
 //function for egal
-let comptCal = 0;
 let veriTy;
 function btnEgal(event) {
     event.preventDefault();
@@ -27,13 +26,10 @@ function btnEgal(event) {
             let reponse = eval(Docalcul);
             bigInput.value = reponse;
             showResult.innerHTML +=  " = " + bigInput.value;
-            //convert ton int
-            let convertBig = parseInt(bigInput.value); 
+            //convert to int for addevent on btn
+            let convertBig = parseInt(bigInput); 
             veriTy = typeof(convertBig);
-            // comptCal=1;
-            // while (comptCal>=1) {
-                
-            // }
+            console.log(convertBig);
         }
     } else {
         bigInput.value = "Error, It's empty";
@@ -55,16 +51,15 @@ const btnX = document.getElementById('times');
 //reset variable
 showResult.innerHTML = "";
 bigInput.disabled = true;
-console.log(typeof(bigInput.value));
 // Recuperate and Add event  to buttons
 btn.forEach(btnIndex => {
     btnIndex.addEventListener('click', function () {
         let btnContent = btnIndex.textContent;
-        if(typeof(convertBig) !== 'number'){
-            bigInput.value += btnContent;
-        }else{
+        if(bigInput.value === null || typeof bigInput.value === 'number'){
             bigInput.value = "";
             showResult.innerHTML = "";
+            bigInput.value += btnContent;
+        }else{
             bigInput.value += btnContent;
         }
     });
@@ -115,23 +110,3 @@ btnPlus.addEventListener("click", function (event) {
 
 //last part egal
 egal.addEventListener("click", btnEgal);
-
-//a last steps
-//1.after calcul, we can use the b+c=c if we clic again on egal
-//
-// //create the btn 00 and btn delete
-// const allBtn = document.querySelector(".buttons");
-// //create div of btn delete
-// const divDel = document.createElement("div");
-// allBtn.appendChild(divDel); //divDel come the child of allbtn
-// //create btn delete
-// const btnDel = "<button type=\"submit\" id=\"btnDelId\">Del</button>";
-// divDel.innerHTML = btnDel;
-// //create div of btn 00
-// const div00 = document.createElement("div");
-// allBtn.appendChild(div00); //divDel come the child of allbtn
-// const btn00 = "<button type=\"submit\" >00</button>";
-// div00.innerHTML = btn00;
-
-// //use the btnDel and btn00
-// const btnDelId = document.getElementById("btnDelId");
