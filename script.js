@@ -34,7 +34,11 @@ bigInput.disabled = true;
 btn.forEach(btnIndex => {
     btnIndex.addEventListener('click', function () {
         let btnContent = btnIndex.textContent;
-        if (typeof(bigInput.value) !== "undefined") {
+        if(bigInput.value){
+            bigInput.value = "";
+            showResult.innerHTML = "";
+            bigInput.value += btnContent;
+        }else{
             bigInput.value += btnContent;
         }
 
@@ -101,6 +105,10 @@ function btnEgal(event) {
 }
 //last part egal
 egal.addEventListener("click", btnEgal);
+
+//a last steps
+//1.after calcul, we can use the b+c=c if we clic again on egal
+//
 // //create the btn 00 and btn delete
 // const allBtn = document.querySelector(".buttons");
 // //create div of btn delete
