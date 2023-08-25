@@ -24,13 +24,23 @@ function btnEgal(event) {
     event.preventDefault();
     if (bigInput.value) {
         if (bigInput.value !== "Error, It's empty") {
+            /*let yo = bigInput.value; 
+            if(yo.include("0")){
+                bigInput.value = "Erreur";
+                showResult.innerHTML = "";
+            }else{*/
             let Docalcul = showResult.innerHTML += bigInput.value;
             let reponse = eval(Docalcul);
-            bigInput.value = reponse;
-            showResult.innerHTML +=  " = " + bigInput.value;
-            convertBig = parseInt(bigInput)
-            console.log(typeof(convertBig));
+            if(reponse = "NaN"){//pour la division /0
+                bigInput.value = "Erreur";
+            } else{
+                bigInput.value = reponse;
+                showResult.innerHTML +=  " = " + bigInput.value;
+                convertBig = parseInt(bigInput);
+                console.log(typeof(convertBig));
             return convertBig;
+            }
+            
         }
     } else {
         bigInput.value = "Error, It's empty";
@@ -92,11 +102,11 @@ percentage.addEventListener("click", function (event) {
 });
 divideby.addEventListener("click", function (event) {
     showResult.innerHTML = bigInput.value + " % ";
-    bigInput.value = "";
+    bigInput.value = ""; 
     event.preventDefault();
 });
 btnX.addEventListener("click", function (event) {
-    showResult.innerHTML = bigInput.value + " x ";
+    showResult.innerHTML = bigInput.value + " * ";
     bigInput.value = "";
     event.preventDefault();
 });
