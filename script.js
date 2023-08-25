@@ -80,6 +80,7 @@ clear.addEventListener("click", function () {
 plusoumoins.addEventListener("click", function () {
     let opposite = parseInt(bigInput.value) * -1;
     bigInput.value = opposite;
+    showResult.innerHTML = "";
 });
 //percentage, if on click in operator, we change de showresult
 percentage.addEventListener("click", function (event) {
