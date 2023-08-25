@@ -85,7 +85,7 @@ plusoumoins.addEventListener("click", function () {
 percentage.addEventListener("click", function (event) {
     let calPercentage;
     calPercentage = bigInput.value / 100;
-    showResult.innerHTML = bigInput.value + "/100";
+    showResult.innerHTML = "";
     bigInput.value = calPercentage;
     event.preventDefault();
 });
