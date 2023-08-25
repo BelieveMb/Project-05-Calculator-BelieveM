@@ -26,20 +26,15 @@ function btnEgal(event) {
         if (bigInput.value !== "Error, It's empty") {
             let Docalcul = showResult.innerHTML += bigInput.value;
             let reponse = eval(Docalcul);
-            if(reponse = "NaN"){//pour la division /0
-                bigInput.value = "Erreur";
-            } else{
                 bigInput.value = reponse;
                 showResult.innerHTML +=  " = " + bigInput.value;
                 convertBig = parseInt(bigInput);
                 console.log(typeof(convertBig));
-            return convertBig;
+                return convertBig;
             }
             
         }
-    } else {
-        bigInput.value = "Error, It's empty";
-    }
+
 }
 
 //place of buttons
@@ -96,7 +91,7 @@ percentage.addEventListener("click", function (event) {
     event.preventDefault();
 });
 divideby.addEventListener("click", function (event) {
-    showResult.innerHTML = bigInput.value + " / ";
+    showResult.innerHTML = bigInput.value + "/";
     bigInput.value = ""; 
     event.preventDefault();
 });
