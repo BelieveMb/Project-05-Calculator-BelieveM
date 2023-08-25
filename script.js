@@ -17,8 +17,10 @@ function addPoint() {
     }
 }
 //function for egal
-let veriTy;
+let convertBig;
 function btnEgal(event) {
+    //convert to int for addevent on btn
+    // let convertBig = parseInt(bigInput.value); 
     event.preventDefault();
     if (bigInput.value) {
         if (bigInput.value !== "Error, It's empty") {
@@ -26,16 +28,15 @@ function btnEgal(event) {
             let reponse = eval(Docalcul);
             bigInput.value = reponse;
             showResult.innerHTML +=  " = " + bigInput.value;
-            //convert to int for addevent on btn
-            let convertBig = parseInt(bigInput); 
-            veriTy = typeof(convertBig);
-            console.log(convertBig);
+            convertBig = parseInt(bigInput)
+            console.log(typeof(convertBig));
+            return convertBig;
         }
     } else {
         bigInput.value = "Error, It's empty";
     }
-
 }
+
 //place of buttons
 const reset = document.getElementById('reset');
 const clear = document.getElementById('clear');
@@ -55,7 +56,8 @@ bigInput.disabled = true;
 btn.forEach(btnIndex => {
     btnIndex.addEventListener('click', function () {
         let btnContent = btnIndex.textContent;
-        if(bigInput.value === null || typeof bigInput.value === 'number'){
+        console.log(typeof(convertBig));
+        if(typeof(convertBig) === 'number'){
             bigInput.value = "";
             showResult.innerHTML = "";
             bigInput.value += btnContent;
