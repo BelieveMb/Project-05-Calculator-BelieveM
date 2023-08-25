@@ -96,7 +96,7 @@ percentage.addEventListener("click", function (event) {
     event.preventDefault();
 });
 divideby.addEventListener("click", function (event) {
-    showResult.innerHTML = bigInput.value + " % ";
+    showResult.innerHTML = bigInput.value + " / ";
     bigInput.value = ""; 
     event.preventDefault();
 });
