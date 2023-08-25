@@ -96,7 +96,7 @@ divideby.addEventListener("click", function (event) {
     event.preventDefault();
 });
 btnX.addEventListener("click", function (event) {
-    showResult.innerHTML = bigInput.value + " * ";
+    showResult.innerHTML = bigInput.value + " x ";
     bigInput.value = "";
     event.preventDefault();
 });
