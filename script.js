@@ -87,7 +87,7 @@ percentage.addEventListener("click", function (event) {
     let calPercentage;
     calPercentage = bigInput.value / 100;
     showResult.innerHTML = "";
-    if(bigInput.value == ""){
+    if(bigInput.value === ""){
         bigInput.value ="";
         showResult.innerHTML = "";  
 
