@@ -24,11 +24,6 @@ function btnEgal(event) {
     event.preventDefault();
     if (bigInput.value) {
         if (bigInput.value !== "Error, It's empty") {
-            /*let yo = bigInput.value; 
-            if(yo.include("0")){
-                bigInput.value = "Erreur";
-                showResult.innerHTML = "";
-            }else{*/
             let Docalcul = showResult.innerHTML += bigInput.value;
             let reponse = eval(Docalcul);
             if(reponse = "NaN"){//pour la division /0
