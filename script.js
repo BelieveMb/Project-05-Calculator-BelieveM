@@ -87,7 +87,13 @@ percentage.addEventListener("click", function (event) {
     let calPercentage;
     calPercentage = bigInput.value / 100;
     showResult.innerHTML = "";
-    bigInput.value = calPercentage;
+    if(bigInput.value == ""){
+        bigInput.value ="";
+        showResult.innerHTML = "";  
+
+    }else{
+        bigInput.value = calPercentage;
+    }
     event.preventDefault();
 });
 divideby.addEventListener("click", function (event) {
